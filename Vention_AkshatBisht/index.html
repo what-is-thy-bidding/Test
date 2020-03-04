@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers</title>
+    <link rel="stylesheet" href="css/main.css">
+
+		
+</head>
+
+<body>
+
+
+    <div id="shop">
+
+        <div class="row">
+            
+            <div class="column">
+                <div class="card">
+
+                    <img src="images/blue-flower.png" alt="default"/>            
+                    <input type="button" class="btn" value = "Add to Cart" onclick="ButtonFunction(this)">
+                    
+
+                    <div class="container">
+                        <h4><b>Blue Flower</b></h4>
+                        <p>$80</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="card">
+
+                    <img src="images/orange-flower.png" alt="default"/>            
+                    <input type="button" class="btn" value = "Add to Cart" onclick="ButtonFunction(this)">
+                    
+
+                    <div class="container">
+                        <h4><b>Orange Flower</b></h4>
+                        <p>$17.60</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+
+                    <img src="images/pink-flower.png" alt="default"/>            
+                    <input type="button" class="btn" value = "Add to Cart" onclick="ButtonFunction(this)">
+                    
+
+                    <div class="container">
+                        <h4><b>Pink Flower</b></h4>
+                        <p>$40</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+
+
+    
+    <script>
+
+        var header=document.getElementById("shop");
+        var array=header.getElementsByClassName("card");
+        
+
+        var func=function(){
+            console.log(this.classList.length);
+
+            var name=this.className;
+            if(!name.includes("acitve")){
+                
+                this.className+=" active ";
+                /*Change the button text here*/
+                
+            }
+
+            if(name.includes("active")){
+                /*Change the button text here*/
+                this.className="card ";
+
+
+            }
+
+        }
+
+        for(var i=0;i<array.length;i++){
+            array[i].addEventListener("click",func,false);
+        }
+
+    </script>
+
+    <script>        
+        function ButtonFunction(obj) {
+            
+        if (obj.value == "Add to Cart")
+            obj.value = "Remove From Cart";
+            
+        else
+            obj.value = "Add to Cart";
+        }
+
+        
+    </script>
+
+
+    
+</body>
+
+
+</html>
